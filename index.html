@@ -52,7 +52,7 @@
             fetch('jsonformatter.txt').then(res => res.json())
         ])
         .then(([precios, data]) => {
-            console.log("Precios cargados:", precios);  // Verifica que se estén cargando los precios
+            
             console.log("Datos GeoJSON cargados:", data);  // Verifica que se cargue correctamente el archivo GeoJSON
 
             // Carga y renderización del GeoJSON
@@ -68,8 +68,7 @@
                         const popupContent = `
                             <b>Partido:</b> ${props.provincia || "N/A"}<br>
                             <b>Cordon:</b> ${props.CordonCABA || "N/A"}<br>
-                            <b>Accesorio:</b> $${props.accesorio || "N/A"}<br>
-                            <b>Consola:</b> $${props.consola || "N/A"}<br>
+                           
                         `;
                         //<b>Valor SAME DAY:</b> $ ${costoHubCaba}<br> (AGREGAR EN LA STRING DE ARRIBA CUANDO HAYA Q PONER PRECIOS)
                         const popup = L.popup()
