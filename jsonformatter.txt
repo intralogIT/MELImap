@@ -3518,11 +3518,9 @@
     {
       "type": "Feature",
       "geometry": {
-        "type": "MultyPolygon",
+        "type": "Polygon",
         "coordinates": [
-          [            
-          ],
-          [
+          
             [
               [
                 -58.516165,
@@ -3561,7 +3559,7 @@
                 -34.443321
               ]
             ]
-          ]
+          
         ]
       },
       "properties": {
