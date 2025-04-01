@@ -1089,7 +1089,7 @@
         "amba": 1,
         "precioHub": 8507,
         "precioIntralog": 8507,
-        "CordonCABA": 4,
+        "CordonCABA": 3,
         "CordonGarin": 3,
         "consola": 27344,
         "accesorio": 20416
