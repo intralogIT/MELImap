@@ -14,15 +14,10 @@
 </head>
 <body>
 
-    <div>
-        <script>
-            
-        </script>
-    </div>
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-    
+
         // Inicialización del mapa
         const map = L.map('map').setView([-34.617, -58.445], 10);
 
@@ -65,20 +60,25 @@
 
                     // Evento al pasar el mouse
                     layer.on('mouseover', (e) => {
-                        const popupContent = `
+                        let popupContent = `
                             <b>Partido:</b> ${props.provincia || "N/A"}<br>
                             <b>Cordon:</b> ${props.CordonCABA || "N/A"}<br>
                         `;
+                        if (props.nordelta) {
+                            popupContent += `<b>Nordelta:</b> ${props.nordelta}<br>`;
+                        }
+
                         //<b>Valor SAME DAY:</b> $ ${costoHubCaba}<br> (AGREGAR EN LA STRING DE ARRIBA CUANDO HAYA Q PONER PRECIOS)
                         const popup = L.popup()
                             .setLatLng(e.latlng)
                             .setContent(popupContent)
                             .openOn(map);
                     });
-// Agregar la imagen del logo aún más a la izquierda y en el frente
-var logoBounds = [[-34.58, -58.46], [-34.62, -58.40]]; // Coordenadas ajustadas más a la izquierda
-        var logoOverlay = L.imageOverlay('iso-transparente.png', logoBounds, { opacity: 1.0 }).addTo(map);
-        logoOverlay.bringToFront(); // Asegurar que el logo esté al frente
+
+                    // Agregar la imagen del logo aún más a la izquierda y en el frente
+                    var logoBounds = [[-34.58, -58.46], [-34.62, -58.40]]; // Coordenadas ajustadas más a la izquierda
+                    var logoOverlay = L.imageOverlay('iso-transparente.png', logoBounds, { opacity: 1.0 }).addTo(map);
+                    logoOverlay.bringToFront(); // Asegurar que el logo esté al frente
 
                     // Cierra el popup cuando el mouse sale
                     layer.on('mouseout', () => {
@@ -111,7 +111,7 @@ var logoBounds = [[-34.58, -58.46], [-34.62, -58.40]]; // Coordenadas ajustadas 
         .catch(error => {
             console.error('Error al cargar los datos:', error);
         });
-    
+
     </script>
 </body>
 </html>
