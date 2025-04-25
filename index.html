@@ -65,10 +65,17 @@
 
                     // Evento al pasar el mouse
                     layer.on('mouseover', (e) => {
-                        const popupContent = `
-                            <b>Partido:</b> ${props.provincia || "N/A"}<br>
-                            <b>Cordon:</b> ${props.CordonCABA || "N/A"}<br>
-                        `;
+    let popupContent = `
+        <b>Partido:</b> ${props.provincia || "N/A"}<br>
+        <b>Cordon:</b> ${props.CordonCABA || "N/A"}<br>
+    `;
+
+    if (props.nordelta) {
+        popupContent += `<b>Nordelta:</b> ${props.nordelta}<br>`;
+    }
+
+    // acá iría el resto de tu lógica, como bindPopup o lo que uses
+});
                         //<b>Valor SAME DAY:</b> $ ${costoHubCaba}<br> (AGREGAR EN LA STRING DE ARRIBA CUANDO HAYA Q PONER PRECIOS)
                         const popup = L.popup()
                             .setLatLng(e.latlng)
