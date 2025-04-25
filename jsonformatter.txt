@@ -768,7 +768,7 @@
         "precioHub": 8507,
         "precioIntralog": 3880,
         "CordonCABA": 3,
-        "nordelta": Cordon 4,
+        "nordelta": "Cordon 4",
         "CordonGarin": 1,
         "consola": 27344,
         "accesorio": 20416
